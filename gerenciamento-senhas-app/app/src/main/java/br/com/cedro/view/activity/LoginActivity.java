@@ -1,7 +1,9 @@
 package br.com.cedro.view.activity;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -26,7 +28,7 @@ public class LoginActivity extends BasicActivity implements LoginViewmodel.Login
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         initInjectors();
-//        binding.setLoginUser(viewmodel);
+        binding.setLoginUser(viewmodel);
     }
 
     private void initInjectors() {
@@ -39,12 +41,12 @@ public class LoginActivity extends BasicActivity implements LoginViewmodel.Login
 
     @Override
     public void onClickSignIn() {
-
+        Toast.makeText(this, "SignIn", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClickSignUp() {
-
+        startActivity( new Intent( this, RegisterActivity.class));
     }
 
     @Override

@@ -1,6 +1,40 @@
 <resources>
     <string name="app_name">gerenciador-senhas</string>
     <string name="user_name">Nome ou Email</string>
+
+    <!--login-->
     <string name="password">Senha</string>
     <string name="enter">Enrtar</string>
+    <string name="sign_up">Cadastrar</string>
+
+    <!--cadastro-->
+    <string name="toolbar_title_create_new_account">Criar novo cadastro</string>
+    <string name="act_register_bt_create_register">Criar Cadastro</string>
+    <string name="act_register_tv_title_form">Ops, um formulário!</string>
+    <string name="act_register_description_form">Mas relaxa, vai ser rapidinho! Basta informar\nos seus dados de acesso, e pronto!</string>
+    <string name="act_register_autofill_using">autopreencher usando</string>
+    <string name="act_register_ht_name_full">Informe seu nome completo</string>
+    <string name="act_register_ht_your_email">Informe seu e-mail</string>
+    <string name="act_resgister_err_email">Email incorreto</string>
+    <string name="act_register_ht_document">CPF</string>
+    <string name="act_register_tv_data_access">Dados de acesso</string>
+    <string name="act_register_ht_create_login">Crie seu login</string>
+    <string name="act_register_ht_create_passsword">Crie uma senha</string>
+    <string name="act_register_ht_confirm_password">Confirme a senha</string>
+    <string name="act_resgister_err_password">Sua senha deverá ter no mínimo \n6 caracteres</string>
+    <string name="act_resgister_err_confirm_password">As senhas não conferem.</string>
+    <string name="act_register_tv_pw_weak">Senha fraca</string>
+    <string name="act_register_tv_pw_avarage">Senha média</string>
+    <string name="act_register_tv_pw_strong">Senha forte</string>
+    <string name="act_register_tv_pwlogin_important">Seu login e senha são muito importantes!</string>
+    <string name="act_register_tv_pwlogin_access_app">É com eles que você acessará o aplicativo\ne efetuará pagamentos.</string>
+    <string name="act_register_err_login">Mínimo de 6 e máximo 14 caracteres</string>
+    <string name="act_register_err_namecomplet_isempty">Campo obrigatório</string>
+    <string name="act_register_tv_showpassword">MOSTRAR</string>
+    <string name="act_register_ht_cnpj">CNPJ</string>
+    <string name="act_register_tv_or">ou</string>
+    <string name="act_register_err_full_name">Digite seu nome completo</string>
+    <string name="act_register_ht_social_reason">Informe sua razão social</string>
+
+
 </resources>

@@ -5,6 +5,8 @@
     <color name="colorPrimaryPlusDark2">#A4C052</color>
     <color name="colorPrimaryPlusDark">#506b02</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorVeryDarkGray">#4a4a4a</color>
+    <color name="colorTransparent">#00ffffff</color>
 
     <color name="colorWhite">#ffffff</color>
     <color name="colorGrayAlpha">#99cccccc</color>
@@ -18,4 +20,14 @@
 
     <!--colors login-->
     <color name="colorButtonDisabled">#d9d9d9</color>
+
+    <!--registro-->
+    <color name="colorGrayText">#4A4A4A</color>
+    <color name="colorTextTitle">#9b9b9b</color>
+    <color name="colorGrayHint">#9b9b9b</color>
+    <color name="colorGrayPwdForce">#dedede</color>
+    <color name="colorVividOrange">#f6a623</color>
+    <color name="colorBlueLight">#dff4ff</color>
+    <color name="colorSoftBlue">#4990e2</color>
+    <color name="colorTvRegister">#0083ca</color>
 </resources>

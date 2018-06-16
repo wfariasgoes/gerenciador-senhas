@@ -29,7 +29,10 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
 
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
     <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_11">11dp</dimen>
     <dimen name="margin_12">12dp</dimen>
     <dimen name="margin_13">13dp</dimen>
@@ -40,6 +43,7 @@
     <dimen name="margin_17">17dp</dimen>
     <dimen name="margin_18">18dp</dimen>
     <dimen name="margin_19">19dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
 
     <dimen name="card_default_corner_radius">4dp</dimen>
     <dimen name="card_default_elevation">16dp</dimen>
@@ -61,4 +65,14 @@
     <dimen name="margin_75">75dp</dimen>
     <dimen name="act_alterpw_te_size">11sp</dimen>
     <dimen name="button_width">260dp</dimen>
+
+    <dimen name="act_register_tv_title_size">28sp</dimen>
+    <dimen name="act_register_tv_description_form_size">14sp</dimen>
+    <dimen name="act_register_autofill_size">13sp</dimen>
+    <dimen name="act_register_ht_size">13sp</dimen>
+    <dimen name="act_register_line_dotte_height">1.5dp</dimen>
+    <dimen name="act_register_tv_data_access_size">16sp</dimen>
+    <dimen name="et_itendity_size">16sp</dimen>
+    <dimen name="act_register_tv_force_pw_size">13sp</dimen>
+
 </resources>

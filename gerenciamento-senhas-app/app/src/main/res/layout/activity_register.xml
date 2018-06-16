@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlt_bt_back"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_toolbar_bigoi">
+
+            <ImageButton
+                android:id="@+id/btBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="@dimen/default_margin"
+                app:srcCompat="@drawable/vd_ic_back"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/btBack"
+                android:paddingBottom="@dimen/default_margin"
+                android:paddingRight="@dimen/default_margin"
+                android:paddingTop="@dimen/default_margin"
+                android:singleLine="true"
+                android:text="@string/toolbar_title_create_new_account"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlt_bt_back"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_title_form"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin"
+                    android:text="@string/act_register_tv_title_form"
+                    android:textColor="@color/colorGrayText"
+                    android:textSize="@dimen/act_register_tv_title_size" />
+
+                <TextView
+                    android:id="@+id/tv_description_form"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_title_form"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:text="@string/act_register_description_form"
+                    android:textColor="@color/colorTextTitle"
+                    android:textSize="@dimen/act_register_tv_description_form_size" />
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/rltDadosRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_description_form"
+                    android:layout_marginBottom="@dimen/default_margin"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_marginRight="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/margin_20"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_2"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:layout_marginRight="@dimen/margin_2"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingRight="@dimen/margin_10">
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/itNameFull"
+                            style="@style/TextInputLayoutRegister"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:hint="@string/act_register_ht_name_full"
+                            app:hintTextAppearance="@style/AppTheme.GerenciadorTextInputLayout">
+
+                            <EditText
+                                android:id="@+id/etNameFull"
+                                style="@style/EditTextApp"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPKLMNOPQRSTUVWXZÃãêÊÁáíéóúõÓÉÍÚÕèàôÔ !@#$%^*~'`()_+=-;:,./ç?{}[]"
+                                android:inputType="text"
+                                android:maxLength="80" />
+
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextInputLayoutRegister"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:hint="@string/act_register_ht_your_email"
+                            app:hintTextAppearance="@style/AppTheme.GerenciadorTextInputLayout">
+
+                            <EditText
+                                android:id="@+id/etYourEmail"
+                                style="@style/EditTextApp"
+                                android:inputType="textEmailAddress"
+                                android:nextFocusDown="@+id/etCreateLogin" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextInputLayoutRegister"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:hint="@string/act_register_ht_create_passsword"
+                            app:hintTextAppearance="@style/AppTheme.GerenciadorTextInputLayout"
+                            app:passwordToggleEnabled="true">
+
+                            <EditText
+                                android:id="@+id/etPassword"
+                                style="@style/EditTextApp"
+                                android:inputType="textPassword"
+                                android:longClickable="false"
+                                android:maxLength="32" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/v_lineOne"
+                                style="@style/ViewLineRegister" />
+
+                            <View
+                                android:id="@+id/v_lineTwo"
+                                style="@style/ViewLineRegister"
+                                android:layout_marginLeft="@dimen/margin_5" />
+
+                            <View
+                                android:id="@+id/v_lineThree"
+                                style="@style/ViewLineRegister"
+                                android:layout_marginLeft="@dimen/margin_5" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.design.widget.TextInputLayout style="@style/TextInputLayoutRegister" />
+
+                            <TextView
+                                android:id="@+id/tvForcePassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:textColor="@color/colorVividOrange"
+                                tools:text="@string/act_register_tv_pw_avarage" />
+
+                        </RelativeLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextInputLayoutRegister"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:hint="@string/act_register_ht_confirm_password"
+                            app:hintTextAppearance="@style/AppTheme.GerenciadorTextInputLayout"
+                            app:passwordToggleEnabled="true">
+
+                            <EditText
+                                android:id="@+id/etConfirmPassword"
+                                style="@style/EditTextApp"
+                                android:inputType="textPassword"
+                                android:longClickable="false"
+                                android:maxLength="32"
+                                android:textColor="@color/colorVeryDarkGray"
+                                android:textSize="@dimen/et_itendity_size" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout style="@style/TextInputLayoutRegister" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_20"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:background="@drawable/bg_border_register"
+                            android:orientation="vertical"
+                            android:padding="@dimen/margin_20">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/act_register_tv_pwlogin_important"
+                                android:textColor="@color/colorTvRegister"
+                                android:textSize="@dimen/act_register_tv_force_pw_size" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/act_register_tv_pwlogin_access_app"
+                                android:textColor="@color/colorTvRegister"
+                                android:textSize="@dimen/act_register_tv_force_pw_size" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/shd_advance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rltDadosRegister">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/bt_advance"
+                        style="@style/ButtonRed"
+                        android:layout_width="@dimen/button_width"
+                        android:text="@string/act_register_bt_create_register" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
