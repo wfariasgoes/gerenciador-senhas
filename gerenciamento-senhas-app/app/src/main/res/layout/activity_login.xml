@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginUser"
+            type="br.com.cedro.viewmodel.LoginViewmodel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.LoginActivity">
+
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="123dp"
+            android:layout_height="126dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo_cedro"
+            android:tag="mImgLogo" />
+
+        <LinearLayout
+            android:id="@+id/ln_login_fields"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/img_logo"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txt_input1"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_above="@+id/txt_input2"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="@string/user_name"
+                android:textColorHint="@android:color/black"
+                app:errorEnabled="true">
+
+
+                <EditText
+                    android:id="@+id/edtUserCpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:inputType="numberDecimal"
+                    android:maxLength="20"
+                    android:textSize="18sp"
+                    android:textColor="@color/darkgrey" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:textSize="18sp"
+                    android:textColor="@color/darkgrey" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_above="@+id/btnRegisterUser"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/bg_btblue_radius"
+                android:clickable="true"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/enter"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="@dimen/normal_font" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/btnRegisterUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/bg_transparent_radius"
+            android:clickable="true"
+            android:tag="mBtnConfirm"
+            android:text="Cadastrar"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+</layout>

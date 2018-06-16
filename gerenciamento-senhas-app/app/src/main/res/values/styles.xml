@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/darkgrey</item>
+    </style>
+
+
+    <style name="EditTextAlterPwLogin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:theme">@style/editTextTheme</item>
+        <item name="fontPath">fonts/DIN-Regular.ttf</item>
+
+    </style>
+
+    <style name="editTextTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorBrightCyan</item>
+        <item name="colorPrimaryDark">@color/colorBrightCyan</item>
+        <item name="colorAccent">@color/colorBrightCyan</item>
+    </style>
+
+    <style name="ButtonWhite">
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/bg_bt_simple_ripple_white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorGrayAlpha</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

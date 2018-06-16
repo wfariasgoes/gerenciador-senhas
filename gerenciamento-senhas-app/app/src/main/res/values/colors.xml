@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#506b02</color>
+    <color name="colorPrimaryPlusDark2">#A4C052</color>
+    <color name="colorPrimaryPlusDark">#506b02</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGrayAlpha">#99cccccc</color>
+    <color name="colorWhiteAlpha">#99ffffff</color>
+    <color name="colorBrightCyan">#00b0bf</color>
+    <color name="grey">#ddd</color>
+    <color name="darkgrey">#ff747474</color>
+    <color name="toolbarTransparent">#33000000</color>
+
+    <color name="dot_dark_screen3">#032f5e</color>
+
+    <!--colors login-->
+    <color name="colorButtonDisabled">#d9d9d9</color>
+</resources>
