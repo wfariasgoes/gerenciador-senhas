@@ -28,10 +28,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img_logo"
+            android:layout_marginTop="@dimen/margin_20"
             android:layout_marginBottom="@dimen/default_margin"
             android:layout_marginLeft="@dimen/default_margin"
             android:layout_marginRight="@dimen/default_margin"
-            android:layout_marginTop="@dimen/margin_20"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -79,6 +79,7 @@
                 </android.support.design.widget.TextInputLayout>
 
 
+
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/bt_advance"
                     style="@style/ButtonRed"
@@ -118,6 +119,18 @@
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avlindicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_logo"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            app:indicatorColor="@color/btnSignIn"
+            app:indicatorName="BallSpinFadeLoaderIndicator" />
 
         <Button
             android:id="@+id/btnRegisterUser"

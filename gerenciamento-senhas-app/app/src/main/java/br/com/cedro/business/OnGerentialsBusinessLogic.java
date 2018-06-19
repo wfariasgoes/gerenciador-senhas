@@ -10,7 +10,7 @@ public interface OnGerentialsBusinessLogic {
 
     void insertUser(User user) throws SQLException, ObjectAlreadyExistException;
     List<User> getUsers() throws SQLException;
-    public List<User> getSearchUsers() throws SQLException;
-    public void updateUser(User user) throws SQLException;
-    public void deleteUser(User user) throws SQLException;
+    List<User> getSearchUsers() throws SQLException;
+    void updateUser(User user) throws SQLException;
+    void deleteUser(User user) throws SQLException;
 }

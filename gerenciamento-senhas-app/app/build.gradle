@@ -68,4 +68,6 @@ dependencies {
 
     //ormLite
     compile 'com.j256.ormlite:ormlite-android:4.46'
+
+    compile 'com.wang.avi:library:2.1.3'
 }

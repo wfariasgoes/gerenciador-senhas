@@ -47,6 +47,7 @@ public class SitesFragment extends Fragment implements UrlSitesAdapter.UrlsListe
     private List<User> userList;
     private UrlSitesAdapter adapter;
 
+
     LayoutAddSitesBinding addSitesBinding;
     private String token;
     private static final String TOKEN = "token";
@@ -97,18 +98,12 @@ public class SitesFragment extends Fragment implements UrlSitesAdapter.UrlsListe
         layoutManager.setReverseLayout(true);
         binding.recyclerSites.setLayoutManager(layoutManager);
 
-        adapter = new UrlSitesAdapter(this, userList, getContext());
+        adapter = new UrlSitesAdapter(this, userList, getContext(), token);
         binding.recyclerSites.setAdapter(adapter);
-
-//        if (!userList.isEmpty() && userList != null) {
-//            binding.recyclerSites.setVisibility(View.VISIBLE);
-//            binding.tvNotFound.setVisibility(View.GONE);
-//        } else {
-//            binding.recyclerSites.setVisibility(View.GONE);
-//            binding.tvNotFound.setVisibility(View.VISIBLE);
-//        }
-
     }
+
+
+
     private void showLoginDialog() {
         final AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
         dialog.setTitle("SALVAR URL");
@@ -201,5 +196,62 @@ public class SitesFragment extends Fragment implements UrlSitesAdapter.UrlsListe
         ManagementBO.getInstance().deleteUser(user);
         adapter.notifyDataSetChanged();
         Toast.makeText(getActivity(), "Deletado com sucesso: ", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClickEdit(User user) {
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+        dialog.setTitle("SALVAR URL");
+
+        dialog.setMessage("Preencha os campos para salvar no disponitivo.");
+
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View registerLayout = inflater.inflate(R.layout.layout_add_sites, null);
+
+        dialog.setView(registerLayout);
+
+        TextView tvSearchUrlImage =  registerLayout.findViewById(R.id.tvSearchUrlImage);
+        final EditText edtUrl = registerLayout.findViewById(R.id.edtUrl);
+        final EditText edtPassword = registerLayout.findViewById(R.id.edtPassword);
+        final EditText edtEmail = registerLayout.findViewById(R.id.edtEmail);
+        final EditText edtName = registerLayout.findViewById(R.id.edtName);
+
+
+        tvSearchUrlImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadImageUrl(dialog,edtUrl.getText().toString());
+            }
+        });
+
+        edtName.setText(user.getName());
+        edtEmail.setText(user.getEmail());
+        edtPassword.setText(user.getPassword());
+        edtUrl.setText(user.getUrl());
+
+        dialog.setPositiveButton("EDITAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                User user = new User();
+                user.setName(edtName.getText().toString());
+                user.setEmail(edtEmail.getText().toString());
+                user.setUrl(edtUrl.getText().toString());
+                user.setPassword(edtPassword.getText().toString());
+
+                ManagementBO.getInstance().updateUser(user);
+                getDatas();
+                Toast.makeText(getActivity(), "Sucesso!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Opção para cancelar
+        dialog.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 }

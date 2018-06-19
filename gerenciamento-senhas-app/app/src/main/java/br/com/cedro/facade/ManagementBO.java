@@ -51,8 +51,8 @@ public class ManagementBO {
     /*
     * Update
      */
-    public void updateUser(User user) {
-        mAmbienteManager = (AmbienteManager) GerenciadorApplication.getInstance().get(AmbienteManager.KEY);
+    public void updateUser(final User user) {
+//        mAmbienteManager = (AmbienteManager) GerenciadorApplication.getInstance().get(AmbienteManager.KEY);
         try {
             mAmbienteManager.updateUser(user);
         } catch (SQLException e) {

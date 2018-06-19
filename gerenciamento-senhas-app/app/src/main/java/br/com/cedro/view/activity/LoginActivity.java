@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
+
+import com.wang.avi.AVLoadingIndicatorView;
 
 import javax.inject.Inject;
 
@@ -23,7 +26,7 @@ import okhttp3.ResponseBody;
 public class LoginActivity extends BasicActivity implements LoginViewmodel.LoginListener{
 
     ActivityLoginBinding binding;
-
+    AVLoadingIndicatorView avLoadingIndicatorView;
     @Inject
     LoginViewmodel viewmodel;
 
@@ -32,6 +35,11 @@ public class LoginActivity extends BasicActivity implements LoginViewmodel.Login
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         initInjectors();
+        avLoadingIndicatorView = new AVLoadingIndicatorView(this);
+        binding.avlindicator.setVisibility(View.GONE);
+        binding.rltDadosRegister.setVisibility(View.VISIBLE);
+        binding.imgLogo.setVisibility(View.VISIBLE);
+        binding.btnRegisterUser.setVisibility(View.VISIBLE);
         binding.setLoginUser(viewmodel);
     }
 
@@ -56,6 +64,10 @@ public class LoginActivity extends BasicActivity implements LoginViewmodel.Login
     @Override
     public void onSuccess(LoginResponse body) {
         Log.v("LOGIN_RESPONSE", body.getToken());
+        binding.avlindicator.setVisibility(View.VISIBLE);
+        binding.rltDadosRegister.setVisibility(View.GONE);
+        binding.imgLogo.setVisibility(View.GONE);
+        binding.btnRegisterUser.setVisibility(View.GONE);
         Bundle bundle = new Bundle();
         Intent intent=new Intent(this, HomeActivity.class);
         bundle.putString("token",body.getToken());

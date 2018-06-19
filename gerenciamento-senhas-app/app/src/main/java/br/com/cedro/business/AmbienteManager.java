@@ -32,10 +32,7 @@ public class AmbienteManager implements OnGerentialsBusinessLogic {
     }
 
 
-
-
     //*****************     User   ***********************
-
     @Override
     public void insertUser(User user) throws SQLException, ObjectAlreadyExistException {
         Dao<User, Long> dao = dataBaseHelper.getDao(User.class);
@@ -61,11 +58,11 @@ public class AmbienteManager implements OnGerentialsBusinessLogic {
     @Override
     public void updateUser(User user) throws SQLException {
         UpdateBuilder updateBuilder = dataBaseHelper.getDao(User.class).updateBuilder();
-        updateBuilder.where().eq("id",user.getId());
+        updateBuilder.where().eq("management_id",user.getId());
         updateBuilder.updateColumnValue("name",user.getName());
         updateBuilder.updateColumnValue("password",user.getPassword());
-        updateBuilder.updateColumnValue("email",user.getEmail());
         updateBuilder.updateColumnValue("url",user.getUrl());
+        updateBuilder.updateColumnValue("email",user.getEmail());
         updateBuilder.update();
 
     }
