@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/item_poster"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/fundo_splash_img" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:orientation="vertical"
+                android:elevation="16dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_name_coutry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome"
+                    android:textSize="20sp"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorGrayText"/>
+
+                <TextView
+                    android:id="@+id/tv_name_capital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:text="URL"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorGrayText" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/button_side1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/small_margin"
+                    android:paddingTop="@dimen/small_margin"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/item_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16sp"
+                        android:text="xxx"
+                        android:textColor="@color/colorGrayText"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <RelativeLayout
+                        android:id="@+id/edit_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_selector"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="60px"
+                            android:layout_height="60px"
+                            android:background="@drawable/ic_edit_black_24dp"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/delete_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_selector"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/img_delete"
+                            android:layout_width="60px"
+                            android:layout_height="60px"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/ic_delete_forever_black_24dp"
+                            android:contentDescription="@null" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent" />
+    </LinearLayout>
+</layout>

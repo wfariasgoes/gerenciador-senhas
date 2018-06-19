@@ -2,6 +2,7 @@ package br.com.cedro.view;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.databinding.ViewDataBinding;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ public class BasicActivity extends AppCompatActivity {
 
     private static final int PERMISSIONS_REQUEST_CODE = 1001;
     private RequestListener mRequestCallback;
+
+    ViewDataBinding dataBinding;
 
     @Override
     protected void attachBaseContext(Context newBase) {

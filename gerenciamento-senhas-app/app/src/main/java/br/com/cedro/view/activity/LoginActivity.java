@@ -3,6 +3,7 @@ package br.com.cedro.view.activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import javax.inject.Inject;
@@ -13,8 +14,11 @@ import br.com.cedro.databinding.ActivityLoginBinding;
 import br.com.cedro.di.module.DaggerLoginComponent;
 import br.com.cedro.di.module.LoginModule;
 import br.com.cedro.model.UserLogin;
+import br.com.cedro.network.response.LoginResponse;
+import br.com.cedro.network.response.RegisterResponse;
 import br.com.cedro.view.BasicActivity;
 import br.com.cedro.viewmodel.LoginViewmodel;
+import okhttp3.ResponseBody;
 
 public class LoginActivity extends BasicActivity implements LoginViewmodel.LoginListener{
 
@@ -50,12 +54,26 @@ public class LoginActivity extends BasicActivity implements LoginViewmodel.Login
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccess(LoginResponse body) {
+        Log.v("LOGIN_RESPONSE", body.getToken());
+        Bundle bundle = new Bundle();
+        Intent intent=new Intent(this, HomeActivity.class);
+        bundle.putString("token",body.getToken());
+        bundle.putString("email",binding.edtUserName.getText().toString());
+        bundle.putString("password",binding.edtPassword.getText().toString());
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
 
     }
 
     @Override
-    public void onError() {
+    public void onError(ResponseBody code) {
+        Log.v("LOGIN_RESPONSE", ""+code.toString());
+    }
 
+    @Override
+    public void onFailure(String message) {
+        Log.e("LOGIN_RESPONSE", ""+message);
     }
 }

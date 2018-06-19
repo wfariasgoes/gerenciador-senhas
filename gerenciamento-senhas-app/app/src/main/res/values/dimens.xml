@@ -59,6 +59,7 @@
     <dimen name="minimum_text">10sp</dimen>
     <dimen name="defout_text">15sp</dimen>
     <dimen name="big_text">18sp</dimen>
+    <dimen name="big_big_text">24sp</dimen>
     <dimen name="act_tv_value_frac_size">40dp</dimen>
     <dimen name="act_tv_value_size">64sp</dimen>
 

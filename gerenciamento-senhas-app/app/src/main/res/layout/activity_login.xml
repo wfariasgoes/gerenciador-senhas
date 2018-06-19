@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="loginUser"
             type="br.com.cedro.viewmodel.LoginViewmodel" />
@@ -57,6 +56,7 @@
                         android:id="@+id/edtUserName"
                         style="@style/EditTextApp"
                         android:inputType="text"
+                        android:text="@={loginUser.mUserLogin.login}"
                         android:nextFocusDown="@+id/etCreateLogin" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -73,6 +73,7 @@
                         android:id="@+id/edtPassword"
                         style="@style/EditTextApp"
                         android:inputType="textPassword"
+                        android:text="@={loginUser.mUserLogin.password}"
                         android:nextFocusDown="@+id/etCreateLogin" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -85,7 +86,10 @@
                     android:layout_above="@+id/btnRegisterUser"
                     android:layout_width="@dimen/button_width"
                     android:text="@string/enter"
-                    android:onClick="@{() -> loginUser.onClickSignIn()}"/>
+                    android:onClick="@{() -> loginUser.onEnter(loginUser.mUserLogin)}"/>
+
+
+
 
                 <!--<RelativeLayout-->
                     <!--android:id="@+id/btnSignIn"-->

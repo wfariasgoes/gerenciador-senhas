@@ -11,18 +11,9 @@ import br.com.cedro.BR;
 
 public class UserLogin extends BaseObservable implements Parcelable {
 
-    @SerializedName("login")
     private String login;
 
-    @SerializedName("password")
     private String password;
-
-    @SerializedName("token")
-    private String token;
-
-    @SerializedName("saved")
-    private String saved;
-
 
     private String loginError;
 
@@ -43,8 +34,6 @@ public class UserLogin extends BaseObservable implements Parcelable {
         login = in.readString();
         loginError = in.readString();
         password = in.readString();
-        token = in.readString();
-        saved = in.readString();
         passwordError = in.readString();
         enterButton = in.readByte() != 0;
     }
@@ -130,22 +119,6 @@ public class UserLogin extends BaseObservable implements Parcelable {
         this.enterButton = enterButton;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public String getSaved() {
-        return saved;
-    }
-
-    public void setSaved(String saved) {
-        this.saved = saved;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -156,8 +129,6 @@ public class UserLogin extends BaseObservable implements Parcelable {
         dest.writeString(login);
         dest.writeString(loginError);
         dest.writeString(password);
-        dest.writeString(token);
-        dest.writeString(saved);
         dest.writeString(passwordError);
         dest.writeByte((byte) (enterButton ? 1 : 0));
     }

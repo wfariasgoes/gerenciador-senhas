@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4CAF50</color>
-    <color name="colorPrimaryDark">#506b02</color>
+    <color name="colorPrimary">@android:color/white</color>
+    <color name="colorPrimaryDark">#CCCCCC</color>
+    <color name="colorAccent">@android:color/black</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="blue">#78909C</color>
     <color name="colorPrimaryPlusDark2">#A4C052</color>
     <color name="colorPrimaryPlusDark">#506b02</color>
-    <color name="colorAccent">#FF4081</color>
     <color name="colorVeryDarkGray">#4a4a4a</color>
     <color name="colorTransparent">#00ffffff</color>
 
@@ -30,4 +32,15 @@
     <color name="colorBlueLight">#dff4ff</color>
     <color name="colorSoftBlue">#4990e2</color>
     <color name="colorTvRegister">#0083ca</color>
+
+    <color name="colorRed">#ED1C24</color>
+    <color name="colorYellow">#F5A623</color>
+    <color name="colorDarkGreen">#429321</color>
+
+    <color name="bottomText">#6b6b76</color>
+    <color name="rippleEfectColor">#f816a463</color>
+    <color name="btnSignIn">#1fbad6</color>
+    <color name="btnregister">#83838c</color>
+
+    <color name="black_50_percent">#80000000</color>
 </resources>
