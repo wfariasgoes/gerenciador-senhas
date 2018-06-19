@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">gerenciador-senhas</string>
-    <string name="user_name">Nome ou Email</string>
+    <string name="user_name">Email</string>
 
     <!--project config -->
     <string name="url_biis_prod">https://dev.people.com.ai/mobile/api/v2/</string>

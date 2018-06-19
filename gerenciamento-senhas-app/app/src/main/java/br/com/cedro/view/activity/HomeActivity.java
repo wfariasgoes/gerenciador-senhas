@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         email = getIntent().getExtras().getString("email");
         password = getIntent().getExtras().getString("password");
         token = getIntent().getExtras().getString("token");
-
+        binding.toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
         if (getIntent() != null && getIntent().hasExtra("name")){
             name = getIntent().getExtras().getString("name");
             binding.toolbar.setTitle("Olá "+name);
