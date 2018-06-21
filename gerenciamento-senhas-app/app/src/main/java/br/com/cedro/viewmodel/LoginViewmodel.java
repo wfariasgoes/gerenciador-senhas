@@ -1,12 +1,14 @@
 package br.com.cedro.viewmodel;
 
+import android.util.Log;
+
+import java.io.IOException;
+
 import br.com.cedro.GerenciadorApplication;
 import br.com.cedro.model.UserLogin;
 import br.com.cedro.network.GerenciadorService;
 import br.com.cedro.network.request.LoginRequest;
 import br.com.cedro.network.response.LoginResponse;
-import br.com.cedro.network.response.RegisterResponse;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,25 +28,35 @@ public class LoginViewmodel {
         userRequest.setEmail(userData.getLogin().toString());
         userRequest.setPassword(userData.getPassword().toString());
 
-        GerenciadorApplication.getInstance()
-                .getApiClient()
-                .getRetrofit().create(GerenciadorService.class)
-                .getUser(userRequest)
-                .enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        if(response.isSuccessful()){
-                            listener.onSuccess(response.body());
-                        }else{
-                            listener.onError(response.errorBody());
+        if (listener.validateFields(userData.getLogin(), userData.getPassword())) {
+            GerenciadorApplication.getInstance()
+                    .getApiClient()
+                    .getRetrofit().create(GerenciadorService.class)
+                    .getUser(userRequest)
+                    .enqueue(new Callback<LoginResponse>() {
+                        @Override
+                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                            Log.i("LOG__E", response.message());
+                            Log.i("LOG__E 1", response.message().trim());
+                            Log.i("LOG__E 2", ""+response.code());
+                            if(response.isSuccessful()){
+                                listener.onSuccess(response.body());
+                            }else{
+                                try {
+                                    listener.onError(response.errorBody().string());
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        listener.onFailure(t.getMessage());
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            listener.onFailure(t.getMessage());
+                        }
+                    });
+
+        }
 
 
     }
@@ -62,7 +74,8 @@ public class LoginViewmodel {
         void onClickSignIn();
         void onClickSignUp();
         void onSuccess(LoginResponse body);
-        void onError(ResponseBody code);
+        void onError(String code);
         void onFailure(String message);
+        boolean validateFields(String login, String password);
     }
 }

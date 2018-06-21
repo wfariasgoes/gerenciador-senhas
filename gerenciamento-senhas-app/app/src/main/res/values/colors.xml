@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@android:color/white</color>
-    <color name="colorPrimaryDark">#032f5e</color>
-    <color name="colorAccent">@android:color/black</color>
+    <color name="colorPrimary">#4476DC</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#4169E1</color>
     <color name="black_overlay">#66000000</color>
     <color name="blue">#78909C</color>
     <color name="colorPrimaryPlusDark2">#A4C052</color>
@@ -19,6 +19,7 @@
     <color name="toolbarTransparent">#33000000</color>
 
     <color name="dot_dark_screen3">#032f5e</color>
+    <color name="colorBlueDefoult">#4476DC</color>
 
     <!--colors login-->
     <color name="colorButtonDisabled">#d9d9d9</color>

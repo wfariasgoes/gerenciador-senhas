@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import br.com.cedro.R;
 import br.com.cedro.databinding.ActivityHomeBinding;
+import br.com.cedro.facade.ManagementBO;
+import br.com.cedro.model.User;
 import br.com.cedro.view.adapter.MyFragmentAdapter;
 import br.com.cedro.view.fragment.SecondFragment;
 import br.com.cedro.view.fragment.SitesFragment;
@@ -16,31 +18,42 @@ public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding binding;
     private MyFragmentAdapter adapter;
     private String name, email, password,token;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
-        Intent dadosRecebidos = getIntent();
-        email = getIntent().getExtras().getString("email");
-        password = getIntent().getExtras().getString("password");
-        token = getIntent().getExtras().getString("token");
-        binding.toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
-        if (getIntent() != null && getIntent().hasExtra("name")){
-            name = getIntent().getExtras().getString("name");
-            binding.toolbar.setTitle("Olá "+name);
-        }else{
-            binding.toolbar.setTitle("Olá "+email);
-        }
+
+        initView();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment, SitesFragment.newInstance(token))
                     .commit();
 
         }
-
         setSupportActionBar(binding.toolbar);
-//       initBinds();
+    }
+
+    private void initView() {
+        user = new User();
+
+        email = getIntent().getExtras().getString("email");
+        password = getIntent().getExtras().getString("password");
+        token = getIntent().getExtras().getString("token");
+        binding.toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
+
+        if (getIntent() != null && getIntent().hasExtra("name")){
+            name = getIntent().getExtras().getString("name");
+            binding.toolbar.setTitle("Olá "+name);
+//            user.setName(name);
+        }else{
+            binding.toolbar.setTitle("Olá "+email);
+        }
+//        user.setEmail(email);
+//        user.setPassword(password);
+//        ManagementBO.getInstance().addUser(user);
+
     }
 
     private void initBinds() {

@@ -6,12 +6,11 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @DatabaseTable(tableName = "user")
 public class User implements Serializable {
-    @DatabaseField(generatedId = true, columnName = "management_id")
-    private Long id;
+    @DatabaseField(generatedId = true,columnName="management_id")
+    private int id;
     @DatabaseField(columnName = "name")
     private String name;
     @DatabaseField(columnName = "password")
@@ -23,11 +22,14 @@ public class User implements Serializable {
 
     private Bitmap picture;
 
-    public Long getId() {
+    public User() {
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -69,24 +71,5 @@ public class User implements Serializable {
 
     public Bitmap getPicture() {
         return picture;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(name, user.name) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(url, user.url) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(picture, user.picture);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id, name, password, url, email, picture);
     }
 }

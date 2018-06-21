@@ -1,8 +1,10 @@
 package br.com.cedro.view.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -161,7 +163,27 @@ public class RegisterActivity extends BasicActivity implements RegisterViewmodel
 
     @Override
     public void onError(String responseBody) {
-        Log.v("REGISTER_RESPONSE 1", ""+responseBody);
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("ERRO");
+        String errorB= null;
+        if (responseBody.contains("Missing required parameters")) {
+            errorB = "Preencha os campos Nome e E-mail";
+        } else if (responseBody.contains("he password must contain at least one uppercase letter")) {
+            errorB = "A senha deve conter pelo menos uma letra maiúscula";
+        }else if (responseBody.contains("Duplicate key for property emai")) {
+            int lenth = responseBody.length();
+            errorB = "O Email "+responseBody.substring(60,lenth-2)+" já foi cadastrado.";
+        }
+
+        dialog.setMessage(errorB);
+        //Opção para cancelar
+        dialog.setNegativeButton("VOLTAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     @Override

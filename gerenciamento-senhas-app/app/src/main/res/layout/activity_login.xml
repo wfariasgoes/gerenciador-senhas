@@ -63,6 +63,7 @@
 
 
                 <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputPassword"
                     style="@style/TextInputLayoutRegister"
                     android:layout_marginTop="@dimen/margin_10"
                     android:hint="@string/password"
@@ -90,31 +91,6 @@
                     android:onClick="@{() -> loginUser.onEnter(loginUser.mUserLogin)}"/>
 
 
-
-
-                <!--<RelativeLayout-->
-                    <!--android:id="@+id/btnSignIn"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="45dp"-->
-                    <!--android:layout_above="@+id/btnRegisterUser"-->
-                    <!--android:layout_gravity="center"-->
-                    <!--android:layout_marginBottom="2dp"-->
-                    <!--android:layout_marginLeft="@dimen/margin_15"-->
-                    <!--android:layout_marginRight="@dimen/margin_15"-->
-                    <!--android:layout_marginTop="28dp"-->
-                    <!--android:background="@drawable/bg_btblue_radius"-->
-                    <!--android:clickable="true"-->
-                    <!--android:gravity="center"-->
-                    <!--android:onClick="@{() -> loginUser.onClickSignIn()}">-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text="@string/enter"-->
-                        <!--android:textColor="@color/cardview_light_background"-->
-                        <!--android:textSize="@dimen/normal_font" />-->
-                <!--</RelativeLayout>-->
 
             </LinearLayout>
 

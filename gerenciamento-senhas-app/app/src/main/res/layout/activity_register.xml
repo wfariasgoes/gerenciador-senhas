@@ -25,7 +25,7 @@
                 android:id="@+id/rlt_bt_back"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@drawable/bg_toolbar_bigoi">
+                android:background="@color/colorBlueDefoult">
 
                 <ImageButton
                     android:id="@+id/btBack"
@@ -49,7 +49,7 @@
                     android:singleLine="true"
                     android:text="@string/toolbar_title_create_new_account"
                     android:textColor="@color/colorWhite"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 

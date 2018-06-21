@@ -12,14 +12,14 @@
 
     <item android:state_focused="true">
         <shape android:shape="rectangle">
-            <gradient android:angle="180" android:endColor="@color/dot_dark_screen3" android:startColor="@color/btnSignIn" />
+            <gradient android:angle="180" android:endColor="@color/colorBlueDefoult" android:startColor="@color/colorBlueDefoult" />
             <corners android:radius="50dp" />
         </shape>
     </item>
 
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
-            <gradient android:angle="180" android:endColor="@color/dot_dark_screen3" android:startColor="@color/btnSignIn" />
+            <gradient android:angle="180" android:endColor="@color/colorBlueDefoult" android:startColor="@color/colorBlueDefoult" />
             <corners android:radius="50dp"/>
         </shape>
     </item>

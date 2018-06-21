@@ -38,7 +38,7 @@ public class ManagementBO {
     * Adicionar User
      */
     public void addUser(final User user) {
-        mAmbienteManager = (AmbienteManager) GerenciadorApplication.getInstance().get(AmbienteManager.KEY);
+//        mAmbienteManager = (AmbienteManager) GerenciadorApplication.getInstance().get(AmbienteManager.KEY);
         try {
             mAmbienteManager.insertUser(user);
         } catch (SQLException e) {
@@ -52,7 +52,6 @@ public class ManagementBO {
     * Update
      */
     public void updateUser(final User user) {
-//        mAmbienteManager = (AmbienteManager) GerenciadorApplication.getInstance().get(AmbienteManager.KEY);
         try {
             mAmbienteManager.updateUser(user);
         } catch (SQLException e) {

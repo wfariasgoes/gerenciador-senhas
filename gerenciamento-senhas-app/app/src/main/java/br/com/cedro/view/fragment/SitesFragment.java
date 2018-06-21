@@ -25,6 +25,7 @@ import java.util.UUID;
 
 import br.com.cedro.GerenciadorApplication;
 import br.com.cedro.R;
+import br.com.cedro.databinding.FragmentListUrlsBinding;
 import br.com.cedro.databinding.FragmentSitesBinding;
 import br.com.cedro.databinding.LayoutAddSitesBinding;
 import br.com.cedro.facade.ManagementBO;
@@ -43,7 +44,8 @@ import retrofit2.Response;
  */
 public class SitesFragment extends Fragment implements UrlSitesAdapter.UrlsListener{
 
-    FragmentSitesBinding binding;
+//    FragmentSitesBinding binding;
+    FragmentListUrlsBinding binding;
     private List<User> userList;
     private UrlSitesAdapter adapter;
 
@@ -66,7 +68,7 @@ public class SitesFragment extends Fragment implements UrlSitesAdapter.UrlsListe
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sites, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_urls, container, false);
         getDatas();
         binding.fabWallpaper.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,9 +172,9 @@ public class SitesFragment extends Fragment implements UrlSitesAdapter.UrlsListe
                         }else {
                             Log.d("FALHA 2", response.message());
                         }
-                        Picasso.with(getActivity())
-                                .load(response.body().getImage().getPath())
-                                .into(binding.imgWallpaperItem);
+//                        Picasso.with(getActivity())
+//                                .load(response.body().getImage().getPath())
+//                                .into(binding.imgWallpaperItem);
 //                        Picasso.with(getActivity().getBaseContext())
 //                                .load(response.body().getImage())
 //                                .into(new SaveImageHelper(getActivity().getBaseContext(),

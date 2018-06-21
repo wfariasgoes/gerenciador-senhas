@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:layout_marginRight="@dimen/small_margin"
+            android:layout_marginStart="@dimen/small_margin"
+            app:cardCornerRadius="@dimen/card_default_corner_radius"
+            app:cardElevation="@dimen/card_default_elevation2"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/cvItems"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/relRescue"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/btn_circle_background"
+                        android:translationZ="2dp">
+
+                        <TextView
+                            android:id="@+id/tvInitial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:elevation="16dp"
+                            android:gravity="center"
+                            android:text="A"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_weight="2"
+                            android:text="Nome"
+                            android:textColor="@color/colorBlueDefoult"
+                            android:textSize="15sp"
+                            app:fontPath="fonts/Roboto-Light.ttf" />
+
+                        <TextView
+                            android:id="@+id/tvUrl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_weight="2"
+                            android:text="url"
+                            android:textSize="12sp"
+                            app:fontPath="fonts/Roboto-Bold.ttf" />
+
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imgAnswer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:padding="@dimen/margin_10"
+                        android:layout_weight="1"
+                        android:src="@drawable/arrow_right"
+                        android:tint="@color/black_overlay"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/relButtomPlus">
+
+                    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                        android:id="@+id/expandableLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbarStyle="insideInset"
+                        app:ael_duration="400"
+                        app:ael_expanded="false"
+                        app:ael_interpolator="accelerate"
+                        app:ael_orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin">
+
+
+                            <TextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:layout_weight="4"
+                                android:text="email"
+                                android:textSize="20sp"
+                                app:fontPath="fonts/Roboto-Bold.ttf" />
+
+
+                            <TextView
+                                android:id="@+id/tvPassword"
+                                fontPath="fonts/Roboto-Bold.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvEmail"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:layout_weight="4"
+                                android:text="@string/password"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_below="@+id/tvPassword"
+                                android:gravity="right"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginLeft="12dp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:id="@+id/edit_button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="@dimen/margin_20"
+                                    android:paddingRight="@dimen/margin_20"
+                                    android:paddingBottom="@dimen/margin_5"
+                                    android:paddingTop="@dimen/margin_5"
+                                    android:background="@drawable/back_selector"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:visibility="visible">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:tint="@color/colorBlueDefoult"
+                                        android:src="@drawable/ic_edit_black_24dp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/delete_button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:paddingLeft="@dimen/margin_20"
+                                    android:paddingRight="@dimen/margin_20"
+                                    android:paddingBottom="@dimen/margin_5"
+                                    android:paddingTop="@dimen/margin_5"
+                                    android:background="@drawable/back_selector"
+                                    android:gravity="center"
+                                    android:visibility="visible">
+
+                                    <ImageView
+                                        android:id="@+id/img_delete"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:tint="@color/colorBlueDefoult"
+                                        android:src="@drawable/ic_delete_forever_black_24dp"
+                                        android:contentDescription="@null" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+                    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</layout>

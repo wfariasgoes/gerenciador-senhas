@@ -1,5 +1,9 @@
 package br.com.cedro.viewmodel;
 
+import android.util.Log;
+
+import java.io.IOException;
+
 import br.com.cedro.GerenciadorApplication;
 import br.com.cedro.model.UserRegister;
 import br.com.cedro.network.GerenciadorService;
@@ -32,10 +36,20 @@ public class RegisterViewmodel {
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        Log.i("LOG__E", response.message());
+                        Log.i("LOG__E 1", response.message().trim());
+                        Log.i("LOG__E 2", ""+response.code());
+
                         if(response.isSuccessful()){
                             listener.onSuccess(response.body());
                         }else{
-                            listener.onError(response.message().toString());
+                            try {
+                                String errorB = response.errorBody().string();
+                                listener.onError(errorB);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
                         }
                     }
 
